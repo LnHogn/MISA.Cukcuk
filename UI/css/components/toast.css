@@ -1,0 +1,53 @@
+.m-toast-box{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.m-toast-box .m-toast-item{
+    /* height: 36px; */
+    display: none;
+    flex: 1;
+    border-radius: 4px;
+    color: black;
+    padding: 16px 8px 16px 16px;
+    align-items: center;
+    margin:0 8px 8px 0;
+    font-size: 14px;
+}
+
+.m-toast-box .m-toast-item .m-toast-text{
+    color: #000;
+    margin: 0 16px 0 8px;
+}
+
+.m-toast-box .m-toast-item .m-toast-icon-suc{
+    background-image: url(../../assets/icon/success-48.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.m-toast-box .m-toast-item .m-toast-icon-err{
+    background-image: url(../../assets/icon/error-48.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.m-toast-box .m-toast-item .m-toast-close{
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/icon/close-48.png);
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.m-toast-box .m-toast-item-err{
+    background-color: #ffcece;
+}
+
+.m-toast-box .m-toast-item-suc{
+    background-color: #baffe7;
+}

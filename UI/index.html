@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cukcuk</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+
+        </div>
+    </div>
+    
+    <div class="sidebar">
+
+    </div>
+
+    <div class="content">
+        <div class="m-row">
+            <label for="m-btn">button</label>
+            <button class="m-btn">Thêm mới</button>
+        </div>
+
+        <div class="m-row">
+            <label for="">button icon</label>
+            <button id="btnAdd" class="m-btn m-btn-icon m-btn-icon-add">Thêm mới</button>
+        </div>
+
+        <div class="m-row">
+            <label for="">input</label>
+            <div class="m-row">
+                <input class="m-input" type="text" placeholder="Tim kiem theo vi tri/phong ban">
+            </div>
+        </div>
+
+        <div class="m-row">
+            <label for="">err input</label>
+            <div class="m-row">
+                <input class="m-input m-input-err" type="text" placeholder="Tim kiem theo vi tri/phong ban">
+                <div class="m-input-err-mess">awfafawffawf</div>
+            </div>           
+        </div>
+
+        <div class="m-row">
+            <label for="">input icon</label>
+            <div class="m-row">
+                <input class="m-input m-input-icon m-input-icon-search" type="text" placeholder="Tim kiem theo vi tri/phong ban">
+            </div>           
+        </div>
+
+        <div class="m-row">
+            <div class="m-row">
+                <label for="">toast</label>
+                <button id="btnShow" class="m-btn m-btn-icon m-btn-icon-add">Thêm mới</button>
+            </div>
+    
+            <div class="m-toast-box">
+                <div class="m-toast-item m-toast-item-suc">
+                    <div class="m-toast-icon-suc"></div>
+                    <div class="m-toast-text">Them thanh cong</div>
+                    <div class="m-toast-close"></div>
+                </div>
+                <div class="m-toast-item m-toast-item-err">
+                    <div class="m-toast-icon-err"></div>
+                    <div class="m-toast-text">co loi khi </div>
+                    <div class="m-toast-close"></div>
+                </div>
+            </div>           
+        </div>
+
+
+        <div class="m-row">
+            <label for="">table</label>
+            <div class="m-row">
+                <table class="m-table" border="1px">
+                    <thead>
+                        <tr>
+                            <th class="text-align-left" style="width: 100px;">STT</th>
+                            <th class="text-align-left" style="width: 150px;">Mã nhân viên</th>
+                            <th class="text-align-left" style="width: 250px;">Họ và tên</th>
+                            <th class="text-align-left" style="width: 100px;">Giới tính</th>
+                            <th class="text-align-center" style="width: 150px;">Ngày sinh</th>
+                            <th class="text-align-left" style="width: 300px;">Địa chỉ Email</th>
+                            <th class="text-align-left" style="width: 300px;">Địa chỉ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-align-left">001</td>
+                            <td class="text-align-left">nv01</td>
+                            <td class="text-align-left">Lâm Nguyên Hồng</td>
+                            <td class="text-align-left">Nam</td>
+                            <td class="text-align-center">27/01/2003</td>
+                            <td class="text-align-left">hong@gmail.com</td>
+                            <td class="text-align-left">abc 123</td>
+                        </tr>                       
+                    </tbody>
+                </table>
+                <div class="m-paging">
+                    <!--left-->
+                    <div class="m-paging-left">Tong: 100</div>
+                    <!--right-->
+                    <div class="m-paging-right">So ban ghi/trang
+                        <select name="" id="">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                        </select>
+                        <button class="m-paging-last"></button>
+                        <button class="m-paging-next"></button>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+
+        <div class="m-row">
+            <div class="m-dialog">
+                <div class="m-dialog-content">
+                    <div class="m-dialog-header">
+                        <div class="m-dialog-header-text">Thông tin nhân viên</div>
+                        <button id="btnClose" class="m-dialog-close m-dialog-close-icon"></button>
+                    </div>
+                    <div class="m-dialog-body"></div>
+                    <div class="m-dialog-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btnShow").addEventListener("click", function() {
+            var toastbox = document.getElementsByClassName("m-toast-item");
+            toastbox[0].style.display = "flex"; 
+            setTimeout(function() {
+                toastbox[0].style.display = "none";
+            }, 1000);
+        });
+
+        document.getElementById("btnClose").addEventListener("click", function() {
+            var dialog = document.getElementsByClassName("m-dialog");
+            dialog[0].style.display = "none"; 
+        });
+
+        document.getElementById("btnAdd").addEventListener("click", function() {
+            var dialog = document.getElementsByClassName("m-dialog");
+            dialog[0].style.display = "block"; 
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+.page-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.page-text{
+    font-size: 20px;
+    font-family:GoogleSans Bold ;
+}
+
+.page-btn{
+    position: absolute;
+    right: 0;
+}
+
+.page-content .page-table{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 16px;
+    position: relative;
+    height: calc(100% - 60px);
+}
+
+.page-toolbar{
+    display: flex;
+    height: 48px;
+    position: relative;
+    align-items: center;
+    padding-right: 16px;
+}
+
+
+.page-toolbar .toolbar-right{
+    position: absolute;
+    right: 0;
+}
+
+.page-toolbar .toolbar-right .m-btn-export{
+    width: 40px;
+    height: 40px;
+    background-image: url(../../assets/icon/export-excel-50.png);
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD ;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.page-toolbar .toolbar-right .m-btn-export:hover{
+    background-color:#F5F5F5 ;
+}
+.page-toolbar .toolbar-right .m-btn-refresh{
+    width: 40px;
+    height: 40px;
+    background-image: url(../../assets/icon/refresh.png);
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD ;
+    cursor: pointer;
+}
+.page-toolbar .toolbar-right .m-btn-refresh:hover{
+    background-color: #F5F5F5;
+}
+
+.page-grid{
+    margin-top: 16px;
+}
+
+.page-table .page-paging{
+    position: absolute;
+    bottom: 0;
+}
+
+/* dialog */
+.m-dialog-body .form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    
+}
+
+.m-dialog-body .table-bot{
+    width: 100%;
+    /* height: calc(100% - 74px); */
+}
+
+
+.table {
+    display: flex;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+}
+
+.cell-1 { flex: 0 0 200px; } /* Độ rộng cột 1 cho hàng 1 */
+.cell-2 { flex: 0 0 calc(576px - 218px); } /* Độ rộng cột 1 cho hàng 2 */
+.cell-3 { flex: 0 0 350px; }
+.default { flex: 1; } /* Độ rộng còn lại cho các cột khác */
+.half {flex: 0 0 50%};
+.full{ flex: 0 0 100%};
+
+
+
+.form-group {
+    margin-bottom: 15px; /* Khoảng cách giữa các nhóm form */
+  }
+
+  .radio-group {
+    display: flex; /* Sử dụng flexbox để dễ dàng căn chỉnh */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 15px; /* Khoảng cách giữa các nút radio và label */
+  }
+
+  .radio-group input[type="radio"] {
+    appearance: none; /* Loại bỏ kiểu mặc định trên tất cả các trình duyệt */
+    border: 2px solid #BDBDBD; /* Thay đổi border của radio button */
+    border-radius: 50%; /* Tạo hình tròn cho radio button */
+    width: 24px; /* Kích thước nút radio */
+    height: 24px; /* Kích thước nút radio */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua radio button */
+    position: relative; /* Để sử dụng position cho pseudo-elements */
+  }
+
+  .radio-group input[type="radio"]:checked::before {
+    content: ""; /* Nội dung của pseudo-element */
+    display: block; /* Hiển thị pseudo-element */
+    width: 24px; /* Kích thước của chấm bên trong nút radio */
+    height: 24px; /* Kích thước của chấm bên trong nút radio */
+    background-image: url(../../assets/icon/radio-checked.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute; /* Vị trí tuyệt đối bên trong nút radio */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Đưa chấm vào giữa */
+    outline: none; /* Loại bỏ viền khi nút radio được chọn */
+
+  }
+
+  .radio-group label {
+    /* font-size: 16px; Kích thước chữ */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua label */
+    display: flex; /* Hiển thị label như một khối để căn chỉnh */
+    align-items: center; /* Căn giữa nội dung của label theo chiều dọc */
+  }
+
+  .m-dialog-footer .m-btn-dialog-cancel{
+    height: 36px;
+    border-radius: 4px;
+    background: #fff;
+    text-align: center;
+    color: #000;  
+    border: none;
+    min-width: 100px;
+    font-family: Ggsans;
+    padding: 0 24px;
+  }
+
+  .m-btn-dialog-cancel:hover{
+    background-color: #FAFAFA;
+    cursor:pointer;
+}
+
+.m-dialog-footer{
+    padding-right: 32px;
+}
+
+
+.required-star {
+    color: red;
+  }
+
+/* sua,xoa */
+.actions {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+}
+
+tr:hover .actions {
+    visibility: visible;
+}
+
+.actions button {
+    margin-left: 5px;
+    padding: 5px 10px;
+}
+
+
+.btn-edit {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    background-image: url(../../assets/icon/document-online.png);
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 1px solid #BDBDBD;
+}
+
+.btn-delete {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    background-image: url(../../assets/icon/delete-48.png);
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 1px solid #BDBDBD
+}
+
+.no-border-right {
+    border-right: none !important;
+}
+
+.m-dialog-edit{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.185);
+    display: none;
+}

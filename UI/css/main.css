@@ -1,0 +1,62 @@
+@import url(../css/components/button.css);
+@import url(../css/components/input.css);
+@import url(../css/components/toast.css);
+@import url(../assets/font/fontawesome-5.15.1/css/all.min.css);
+@import url(../assets/font/fontawesome-5.15.1/js/all.min.js);
+@import url(../css/components/table.css);
+@import url(../css/components/paging.css);
+@import url(../css/components/dialog.css);
+@import url(../css/layout/navbar.css);
+@import url(../css/layout/header.css);
+@import url(../css/layout/content.css);
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Ggsans;
+}
+
+label{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Ggsans;
+    src: url("../assets/font/GoogleSans-Regular.otf");
+}
+@font-face {
+    font-family: GoogleSans Bold;
+    src: url("../assets/font/GoogleSans-Bold.otf");
+}
+@font-face {
+    font-family: GoogleSans Italic;
+    src: url("../assets/font/GoogleSans-Italic.otf");
+}
+
+.m-row{
+    width: 100%;
+}
+
+.main{
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 56px);
+}
+
+select{
+    border: none;
+    font-family: GoogleSans Bold;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}

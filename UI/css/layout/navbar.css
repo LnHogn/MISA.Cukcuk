@@ -1,0 +1,110 @@
+.navbar{
+    width: 200px;
+    height: 100%;
+    flex-shrink: 0;
+    background-color: #041434;
+    flex-direction: column;
+    position: relative;
+}
+
+.menu-item{
+    display: flex;
+    height:44px ;
+    width: 176px;
+    align-items: center;
+    margin-left: 12px;
+    margin-right: 12px;
+    border-radius: 4px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+
+.menu-item:first-child{
+    margin-top: 20px;
+}
+
+
+
+.menu-item-collapse {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    display: flex;
+    height:44px ;
+    margin-bottom: 0;
+    border-top: 2px solid #213553;
+    align-items: center;
+    cursor: pointer;
+}
+.menu-item-collapse:hover{
+    background-color:rgba(167, 196, 255, 0.16); 
+
+}
+
+.menu-item:hover{
+    background-color:rgba(167, 196, 255, 0.16); 
+}
+
+.menu-item-focus{
+    background-color:rgba(167, 196, 255, 0.16); 
+}
+
+.menu-item .menu-icon-home{
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/icon/dashboard.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(0) invert(1);
+    margin-left: 16px;
+}
+
+
+.menu-text{
+    font-family: GgSans;
+    font-size: 14px;
+    color:#FFFFFF ;
+    padding-left: 12px;
+}
+
+.menu-item .menu-icon-char{
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/icon/report.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    margin-left: 16px;
+}
+.menu-icon-emp{
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/icon/dic-employee.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    margin-left: 16px;
+}
+.menu-icon-sett{
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/icon/setting.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    margin-left: 16px;
+}
+.menu-icon-back{
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/icon/btn-prev-page.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    margin-left: 16px;
+}

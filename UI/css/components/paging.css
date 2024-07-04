@@ -1,0 +1,59 @@
+.m-paging{
+    width: 100%;
+    height: 56px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-paging button{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+}
+
+.m-paging .m-paging-left{
+    position: absolute;
+    left: 0;
+    padding-left: 16px;
+}
+
+.m-paging .m-paging-right{
+    position: absolute;
+    right: 0; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 16px;
+}
+
+
+.m-paging-last{
+    background-image: url(../../assets/icon/btn-prev-page.svg);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: white;
+}
+
+.m-paging-next{
+    background-image: url(../../assets/icon/btn-next-page.svg);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: white;
+    margin-right: 16px;
+}
+
+.m-paging-right select{
+    border: none;
+    font-family: GoogleSans Bold;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}

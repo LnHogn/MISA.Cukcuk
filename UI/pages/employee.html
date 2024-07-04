@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách nhân viên - CUKCUK</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/page/employee.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="toggle"></div>
+            <div class="logo"></div>
+        </div>
+        <div class="header-right">
+            <select name="" id="">
+                <option value="10">Chi nhánh Hà Nội</option>
+                <option value="20">Chi nhánh Đà Nẵng</option>
+                <option value="50">Chi nhánh Hồ Chí Minh</option>
+            </select>
+            <div class="user-info">
+                <div class="user-logo"></div>
+                <div class="user-name">Lâm Nguyên Hồng</div>
+                <div class="options"></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="main">
+        <div class="navbar">
+            <div class="menu-item">
+                <div class="menu-icon-home"></div>
+                <div class="menu-text">Trang chủ</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon-char"></div>
+                <div class="menu-text">Báo cáo</div>
+            </div>
+            <div class="menu-item menu-item-focus">
+                <div class="menu-icon-emp"></div>
+                <div class="menu-text">Nhân viên</div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon-sett"></div>
+                <div class="menu-text">Cài đặt</div>
+            </div>
+            <div class="menu-item-collapse">
+                <div class="menu-icon-back"></div>
+                <div class="menu-text">Thu gọn</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="page-header">
+                <div class="page-text">Quản lý Nhân viên</div>
+                <button id="btnAdd" class="page-btn m-btn m-btn-icon m-btn-icon-add">Thêm mới</button>
+            </div>
+            <div class="page-table">
+                <div class="page-toolbar">
+                    <div class="toolbar-left">
+                        <input class="m-input m-input-icon m-input-icon-search" type="text" placeholder="Tìm kiếm theo mã, họ tên" style="width: 250px;">
+                    </div>
+                    <div class="toolbar-right">
+                        <button class="m-btn-export"></button>
+                        <button class="m-btn-refresh"></button>
+                    </div>
+
+                </div>
+                <div class="page-grid">                  
+                    <table class="m-table">
+                        <thead>
+                            <tr>
+                                <th class="text-align-left" style="width: 80px;">STT</th>
+                                <th class="text-align-left" style="width: 130px;">Mã nhân viên</th>
+                                <th class="text-align-left" style="width: 220px;">Họ và tên</th>
+                                <th class="text-align-left" style="width: 100px;">Giới tính</th>
+                                <th class="text-align-center" style="width: 100px;">Ngày sinh</th>
+                                <th class="text-align-left" style="width: 300px;">Địa chỉ Email</th>
+                                <th class="text-align-left no-border-right" style="width: 300px;">Địa chỉ</th>
+                                <th class="no-border-right" style="width: 80px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">nv01</td>
+                                <td class="text-align-left">Lâm Nguyên Hồng</td>
+                                <td class="text-align-center">Nam</td>
+                                <td class="text-align-center">27/01/2003</td>
+                                <td class="text-align-left">hong@gmail.com</td>
+                                <td class="text-align-left no-border-right">abc 123</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>   
+
+                        </tbody>
+                    </table>
+                    <div class="m-paging page-paging">
+                        <!--left-->
+                        <div class="m-paging-left">Tổng: 100</div>
+                        <!--right-->
+                        <div class="m-paging-right">Số bản ghi/trang
+                            <select name="" id="">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                            </select>
+                            <button class="m-paging-last"></button>
+                            <button class="m-paging-next"></button>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--dialog them-->
+    <div class="m-dialog">
+        <div class="m-dialog-content">
+            <div class="m-dialog-header">
+                <div class="m-dialog-header-text">Thông tin nhân viên</div>
+                <button id="btnClose" class="m-dialog-close m-dialog-close-icon"></button>
+            </div>
+            <div class="m-dialog-body">
+                <div class="table">
+                    <div class="row">
+                        <div class="cell-1">
+                            <div class="form-group">
+                                <label for="ma-nhan-vien">Mã Nhân Viên <span class="required-star">*</span></label>
+                                <input class="m-input" type="text" id="ma-nhan-vien" name="ma-nhan-vien">
+                            </div>
+                        </div>
+                        <div class="cell-2">
+                            <div class="form-group">
+                                <label for="ho-ten">Họ và Tên <span class="required-star">*</span></label>
+                                <input class="m-input" type="text" id="ho-ten" name="ho-ten">
+                            </div>
+                        </div>
+                        <div class="cell-1">
+                            <div class="form-group">
+                                <label for="ngay-sinh">Ngày Sinh</label>
+                                <input class="m-input" type="date" id="ngay-sinh" name="ngay-sinh">
+                            </div>
+                        </div>
+                        <div class="cell default">
+                            <div class="form-group">
+                                <label>Giới Tính:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="nam" name="gioi-tinh" value="Nam">
+                                    <label for="nam">Nam</label>
+                                    <input type="radio" id="nu" name="gioi-tinh" value="Nữ">
+                                    <label for="nu">Nữ</label>
+                                    <input type="radio" id="khac" name="gioi-tinh" value="Khác">
+                                    <label for="nu">Khác</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell half">
+                            <div class="form-group">
+                                <label for="vi-tri">Vị Trí</label>
+                                <select class="m-input" type="text" id="vi-tri" name="vi-tri"></select>
+                            </div>
+                        </div>
+                        <div class="cell-3">
+                            <div class="form-group">
+                                <label for="so-cmtnd">Số CMTND</label>
+                                <input class="m-input" type="number" id="so-cmtnd" name="so-cmtnd">
+                            </div>
+                        </div>
+                        <div class="cell default">
+                            <div class="form-group">
+                                <label for="ngay-cap">Ngày Cấp</label>
+                                <input class="m-input" type="date" id="ngay-cap" name="ngay-cap">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell half">
+                            <div class="form-group">
+                                <label for="phong-ban">Phòng Ban</label>
+                                <select class="m-input" type="text" id="phong-ban" name="phong-ban"></select>
+                            </div>
+                        </div>
+                        <div class="cell half">
+                            <div class="form-group">
+                                <label for="noi-cap">Nơi Cấp</label>
+                                <input class="m-input" type="text" id="noi-cap" name="noi-cap">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--hang 5-->
+                    <table class="table-bot">
+                        <tr>
+                            <td colspan="4">
+                                <div class="form-group">
+                                    <label for="dia-chi">Địa Chỉ</label>
+                                    <input class="m-input" type="text" id="dia-chi" name="dia-chi">
+                                </div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td >
+                            <div class="form-group">
+                                <label for="dt-di-dong">ĐT Di Động</label>
+                                <input class="m-input" type="text" id="dt-di-dong" name="dt-di-dong">
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label for="dt-co-dinh">ĐT Cố Định</label>
+                                <input class="m-input" type="text" id="dt-co-dinh" name="dt-co-dinh">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="m-input" type="email" id="email" name="email">
+                            </div>
+                        </td>
+                    </tr>
+                
+                    <!--hang 6-->
+                    
+                    <tr>
+                        <td style="width: 383px;">
+                            <div class="form-group">
+                                <label for="tai-khoan-ngan-hang">Tài Khoản Ngân Hàng</label>
+                                <input class="m-input" type="text" id="tai-khoan-ngan-hang" name="tai-khoan-ngan-hang">
+                            </div>
+                        </td>
+                        <td colspan="2" style="width: 383px;">
+                            <div class="form-group">
+                                <label for="ten-ngan-hang">Tên Ngân Hàng</label>
+                                <input class="m-input" type="text" id="ten-ngan-hang" name="ten-ngan-hang">
+                            </div>
+                        </td>
+                        <td style="width: 383px;">
+                            <div class="form-group">
+                                <label for="chi-nhanh">Chi Nhánh</label>
+                                <input class="m-input" type="text" id="chi-nhanh" name="chi-nhanh">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="m-dialog-footer">
+                <button class="m-btn-dialog-cancel">Hủy</button>
+                <button class="m-btn">Thêm</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--dialog sua-->
+    <div class="m-dialog m-dialog-edit">
+        <div class="m-dialog-content">
+            <div class="m-dialog-header">
+                <div class="m-dialog-header-text">Sửa thông tin nhân viên</div>
+                <button id="btnClose-edit" class="m-dialog-close m-dialog-close-icon"></button>
+            </div>
+            <div class="m-dialog-body">
+                <div class="table">
+                    <div class="row">
+                        <div class="cell-1">
+                            <div class="form-group">
+                                <label for="ma-nhan-vien">Mã Nhân Viên <span class="required-star">*</span></label>
+                                <input class="m-input" type="text" id="ma-nhan-vien" name="ma-nhan-vien">
+                            </div>
+                        </div>
+                        <div class="cell-2">
+                            <div class="form-group">
+                                <label for="ho-ten">Họ và Tên <span class="required-star">*</span></label>
+                                <input class="m-input" type="text" id="ho-ten" name="ho-ten">
+                            </div>
+                        </div>
+                        <div class="cell-1">
+                            <div class="form-group">
+                                <label for="ngay-sinh">Ngày Sinh</label>
+                                <input class="m-input" type="date" id="ngay-sinh" name="ngay-sinh">
+                            </div>
+                        </div>
+                        <div class="cell default">
+                            <div class="form-group">
+                                <label>Giới Tính:</label>
+                                <div class="radio-group">
+                                    <input type="radio" id="nam" name="gioi-tinh" value="Nam">
+                                    <label for="nam">Nam</label>
+                                    <input type="radio" id="nu" name="gioi-tinh" value="Nữ">
+                                    <label for="nu">Nữ</label>
+                                    <input type="radio" id="khac" name="gioi-tinh" value="Khác">
+                                    <label for="nu">Khác</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell half">
+                            <div class="form-group">
+                                <label for="vi-tri">Vị Trí</label>
+                                <select class="m-input" type="text" id="vi-tri" name="vi-tri"></select>
+                            </div>
+                        </div>
+                        <div class="cell-3">
+                            <div class="form-group">
+                                <label for="so-cmtnd">Số CMTND</label>
+                                <input class="m-input" type="number" id="so-cmtnd" name="so-cmtnd">
+                            </div>
+                        </div>
+                        <div class="cell default">
+                            <div class="form-group">
+                                <label for="ngay-cap">Ngày Cấp</label>
+                                <input class="m-input" type="date" id="ngay-cap" name="ngay-cap">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell half">
+                            <div class="form-group">
+                                <label for="phong-ban">Phòng Ban</label>
+                                <select class="m-input" type="text" id="phong-ban" name="phong-ban"></select>
+                            </div>
+                        </div>
+                        <div class="cell half">
+                            <div class="form-group">
+                                <label for="noi-cap">Nơi Cấp</label>
+                                <input class="m-input" type="text" id="noi-cap" name="noi-cap">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!--hang 5-->
+                    <table class="table-bot">
+                        <tr>
+                            <td colspan="4">
+                                <div class="form-group">
+                                    <label for="dia-chi">Địa Chỉ</label>
+                                    <input class="m-input" type="text" id="dia-chi" name="dia-chi">
+                                </div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td >
+                            <div class="form-group">
+                                <label for="dt-di-dong">ĐT Di Động</label>
+                                <input class="m-input" type="text" id="dt-di-dong" name="dt-di-dong">
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <label for="dt-co-dinh">ĐT Cố Định</label>
+                                <input class="m-input" type="text" id="dt-co-dinh" name="dt-co-dinh">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="m-input" type="email" id="email" name="email">
+                            </div>
+                        </td>
+                    </tr>
+                
+                    <!--hang 6-->
+                    
+                    <tr>
+                        <td style="width: 383px;">
+                            <div class="form-group">
+                                <label for="tai-khoan-ngan-hang">Tài Khoản Ngân Hàng</label>
+                                <input class="m-input" type="text" id="tai-khoan-ngan-hang" name="tai-khoan-ngan-hang">
+                            </div>
+                        </td>
+                        <td colspan="2" style="width: 383px;">
+                            <div class="form-group">
+                                <label for="ten-ngan-hang">Tên Ngân Hàng</label>
+                                <input class="m-input" type="text" id="ten-ngan-hang" name="ten-ngan-hang">
+                            </div>
+                        </td>
+                        <td style="width: 383px;">
+                            <div class="form-group">
+                                <label for="chi-nhanh">Chi Nhánh</label>
+                                <input class="m-input" type="text" id="chi-nhanh" name="chi-nhanh">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="m-dialog-footer">
+                <button class="m-btn-dialog-cancel">Hủy</button>
+                <button class="m-btn">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/employee.js"></script>
+    
+</body>
+</html>
