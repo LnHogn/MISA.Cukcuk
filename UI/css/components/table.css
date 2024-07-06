@@ -43,3 +43,32 @@
     background-color: #CCE4FF;
     cursor: pointer;
 }
+
+.table-container {
+    width: 100%;
+    max-height: 396px; /* Chiều cao tối đa của bảng */
+    overflow-y: auto; /* Kích hoạt cuộn dọc nếu nội dung vượt quá chiều cao */
+    border: 1px solid #BDBDBD;
+}
+
+.m-table thead th {
+    position: sticky;
+    top: 0;
+    /* z-index: 1; */
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px; /* Chiều rộng của thanh cuộn dọc */
+}
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Màu nền của track */
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Màu của thanh cuộn */
+    border-radius: 10px; /* Bo tròn các góc */
+    border: 2px solid #f1f1f1; /* Viền quanh thanh cuộn */
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Màu của thanh cuộn khi hover */
+}
