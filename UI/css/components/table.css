@@ -6,9 +6,7 @@
 
 .m-table tr{
     height: 36px;
-    border: 1px solid;
-    border-collapse: collapse;
-    border-color:#BDBDBD;
+
 }
 
 .m-table th{
@@ -19,9 +17,8 @@
 }
 
 .m-table td{
-    border-right: 1px solid;
-    border-collapse: collapse;
-    border-color:#BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
+    border-right: 1px solid #BDBDBD;
 }
 
 .m-table tr td,.m-table tr th{
@@ -51,10 +48,9 @@
     border: 1px solid #BDBDBD;
 }
 
-.m-table thead th {
+.m-table thead tr {
     position: sticky;
     top: 0;
-    /* z-index: 1; */
 }
 
 .table-container::-webkit-scrollbar {

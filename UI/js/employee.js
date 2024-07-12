@@ -1,4 +1,49 @@
 $(document).ready(function(){
+    //call api
+    $.ajax({
+        type: "GET",
+        url: "https://cukcuk.manhnv.net/api/v1/Employees",
+        success: function (response) {
+            for (const employee of response) {
+                //;ay thong tin
+                let EmployeeCode = employee.EmployeeCode;
+                let FullName = employee.FullName;
+                let gender = employee['GenderName'];
+                let dob = employee['DateOfBirth'];
+                let email = employee.Email;
+                let diaChi = employee.Address;
+                //dinh dang du lieu
+                if(dob){
+                    dob = new Date(dob);
+                    let day = dob.getDate();
+                    day = day<10?`0${day}`:day;
+                    let month = dob.getMonth()+1;
+                    month = month<10?`0${month}`:month;
+                    let year = dob.getFullYear();
+
+                    dob = `${day}/${month}/${year}`;
+                }
+                //hien thi du lieu
+                var el = `<tr>
+                                <td class="text-align-left">001</td>
+                                <td class="text-align-left">${EmployeeCode}</td>
+                                <td class="text-align-left">${FullName}</td>
+                                <td class="text-align-center">${gender}</td>
+                                <td class="text-align-center">${dob}</td>
+                                <td class="text-align-left">${email}</td>
+                                <td class="text-align-left no-border-right">${diaChi}</td>
+                                <td>
+                                    <div class="actions">
+                                        <button  id="btn-sua"  class="btn-edit"></button>
+                                        <button id="btn-xoa" class="btn-delete"></button>                               
+                                    </div>
+                                </td>
+                            </tr>`;
+            $("table#table-emp tbody").append(el);                
+            }            
+        }
+    });
+
 
     //them
     $("#btnAdd").click(function(){
