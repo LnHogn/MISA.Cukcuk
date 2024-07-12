@@ -316,7 +316,7 @@
     </div>
 
     <!--dialog them-->
-    <div class="m-dialog">
+    <div id="dialog-them" class="m-dialog">
         <div class="m-dialog-content">
             <div class="m-dialog-header">
                 <div class="m-dialog-header-text">Thông tin nhân viên</div>
@@ -328,30 +328,30 @@
                         <div class="cell-1">
                             <div class="form-group">
                                 <label for="ma-nhan-vien">Mã Nhân Viên <span class="required-star">*</span></label>
-                                <input class="m-input" type="text" id="ma-nhan-vien" name="ma-nhan-vien">
+                                <input class="m-input" type="text" id="txtMaNV" name="ma-nhan-vien" required>
                             </div>
                         </div>
                         <div class="cell-2">
                             <div class="form-group">
                                 <label for="ho-ten">Họ và Tên <span class="required-star">*</span></label>
-                                <input class="m-input" type="text" id="ho-ten" name="ho-ten">
+                                <input class="m-input" type="text" id="txtHoTen" name="ho-ten" required>
                             </div>
                         </div>
                         <div class="cell-1">
                             <div class="form-group">
                                 <label for="ngay-sinh">Ngày Sinh</label>
-                                <input class="m-input" type="date" id="ngay-sinh" name="ngay-sinh">
+                                <input class="m-input" type="date" id="dtDateOfBirth" name="ngay-sinh">
                             </div>
                         </div>
                         <div class="cell default">
                             <div class="form-group">
                                 <label>Giới Tính:</label>
                                 <div class="radio-group">
-                                    <input type="radio" id="nam" name="gioi-tinh" value="Nam">
+                                    <input type="radio" id="rdNam" name="gioi-tinh" value="Nam">
                                     <label for="nam">Nam</label>
-                                    <input type="radio" id="nu" name="gioi-tinh" value="Nữ">
+                                    <input type="radio" id="rdNu" name="gioi-tinh" value="Nữ">
                                     <label for="nu">Nữ</label>
-                                    <input type="radio" id="khac" name="gioi-tinh" value="Khác">
+                                    <input type="radio" id="rdKhac" name="gioi-tinh" value="Khác">
                                     <label for="nu">Khác</label>
                                 </div>
                             </div>
@@ -361,19 +361,19 @@
                         <div class="cell half">
                             <div class="form-group">
                                 <label for="vi-tri">Vị Trí</label>
-                                <select class="m-input" type="text" id="vi-tri" name="vi-tri"></select>
+                                <select class="m-input" type="text" id="cbViTri" name="vi-tri"></select>
                             </div>
                         </div>
                         <div class="cell-3">
                             <div class="form-group">
                                 <label for="so-cmtnd">Số CMTND</label>
-                                <input class="m-input" type="number" id="so-cmtnd" name="so-cmtnd">
+                                <input class="m-input" type="number" id="txtSoCMT" name="so-cmtnd" required>
                             </div>
                         </div>
                         <div class="cell default">
                             <div class="form-group">
                                 <label for="ngay-cap">Ngày Cấp</label>
-                                <input class="m-input" type="date" id="ngay-cap" name="ngay-cap">
+                                <input class="m-input" type="date" id="dtNgayCap" name="ngay-cap">
                             </div>
                         </div>
                     </div>
@@ -381,13 +381,13 @@
                         <div class="cell half">
                             <div class="form-group">
                                 <label for="phong-ban">Phòng Ban</label>
-                                <select class="m-input" type="text" id="phong-ban" name="phong-ban"></select>
+                                <select class="m-input" type="text" id="cbPhongBan" name="phong-ban"></select>
                             </div>
                         </div>
                         <div class="cell half">
                             <div class="form-group">
                                 <label for="noi-cap">Nơi Cấp</label>
-                                <input class="m-input" type="text" id="noi-cap" name="noi-cap">
+                                <input class="m-input" type="text" id="txtNoiCap" name="noi-cap">
                             </div>
                         </div>
                     </div>
@@ -398,7 +398,7 @@
                             <td colspan="4">
                                 <div class="form-group">
                                     <label for="dia-chi">Địa Chỉ</label>
-                                    <input class="m-input" type="text" id="dia-chi" name="dia-chi">
+                                    <input class="m-input" type="text" id="txtDiaChi" name="dia-chi">
                                 </div>
                             </td>
                         </tr>
@@ -406,19 +406,19 @@
                         <td >
                             <div class="form-group">
                                 <label for="dt-di-dong">ĐT Di Động</label>
-                                <input class="m-input" type="text" id="dt-di-dong" name="dt-di-dong">
+                                <input class="m-input" type="text" id="txtDTDD" name="dt-di-dong" required>
                             </div>
                         </td>
                         <td colspan="2">
                             <div class="form-group">
                                 <label for="dt-co-dinh">ĐT Cố Định</label>
-                                <input class="m-input" type="text" id="dt-co-dinh" name="dt-co-dinh">
+                                <input class="m-input" type="text" id="txtDTCD" name="dt-co-dinh">
                             </div>
                         </td>
                         <td>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input class="m-input" type="email" id="email" name="email">
+                                <input class="m-input" type="email" id="txtEmail" name="email">
                             </div>
                         </td>
                     </tr>
@@ -429,27 +429,27 @@
                         <td style="width: 383px;">
                             <div class="form-group">
                                 <label for="tai-khoan-ngan-hang">Tài Khoản Ngân Hàng</label>
-                                <input class="m-input" type="text" id="tai-khoan-ngan-hang" name="tai-khoan-ngan-hang">
+                                <input class="m-input" type="text" id="txtTaiKhoanNH" name="tai-khoan-ngan-hang">
                             </div>
                         </td>
                         <td colspan="2" style="width: 383px;">
                             <div class="form-group">
                                 <label for="ten-ngan-hang">Tên Ngân Hàng</label>
-                                <input class="m-input" type="text" id="ten-ngan-hang" name="ten-ngan-hang">
+                                <input class="m-input" type="text" id="txtTenNH" name="ten-ngan-hang">
                             </div>
                         </td>
                         <td style="width: 383px;">
                             <div class="form-group">
                                 <label for="chi-nhanh">Chi Nhánh</label>
-                                <input class="m-input" type="text" id="chi-nhanh" name="chi-nhanh">
+                                <input class="m-input" type="text" id="txtChiNhanh" name="chi-nhanh">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="m-dialog-footer">
-                <button class="m-btn-dialog-cancel">Hủy</button>
-                <button class="m-btn">Thêm</button>
+                <button id="btnHuy" class="m-btn-dialog-cancel">Hủy</button>
+                <button id="btnSave" class="m-btn">Thêm</button>
             </div>
         </div>
     </div>
@@ -593,6 +593,9 @@
             </div>
         </div>
     </div>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-3.7.1.js"></script>
+
     <script src="../js/employee.js"></script>
     
 </body>
