@@ -65,7 +65,7 @@
 }
 .table-container::-webkit-scrollbar-thumb {
     background-color: #888; /* Màu của thanh cuộn */
-    border-radius: 10px; /* Bo tròn các góc */
+    border-radius: 4px; /* Bo tròn các góc */
     border: 2px solid #f1f1f1; /* Viền quanh thanh cuộn */
 }
 
