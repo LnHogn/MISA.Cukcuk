@@ -81,28 +81,13 @@
                                 <th class="no-border-right" style="width: 80px;"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-align-left">001</td>
-                                <td class="text-align-left">nv01</td>
-                                <td class="text-align-left">Lâm Nguyên Hồng</td>
-                                <td class="text-align-center">Nam</td>
-                                <td class="text-align-center">27/01/2003</td>
-                                <td class="text-align-left">hong@gmail.com</td>
-                                <td class="text-align-left no-border-right">abc 123</td>
-                                <td>
-                                    <div class="actions">
-                                        <button  id="btn-sua"  class="btn-edit"></button>
-                                        <button id="btn-xoa" class="btn-delete"></button>                               
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody>                            
                         </tbody>
                     </table>
                     </div>
                     <div class="m-paging page-paging">
                         <!--left-->
-                        <div class="m-paging-left">Tổng: 100</div>
+                        <div class="m-paging-left">Tổng: <span id="total"></span></div>
                         <!--right-->
                         <div class="m-paging-right">Số bản ghi/trang
                             <select name="" id="">
@@ -151,11 +136,11 @@
                             <div class="form-group">
                                 <label>Giới Tính:</label>
                                 <div class="radio-group">
-                                    <input type="radio" id="rdNam" name="gioi-tinh" value="Nam">
+                                    <input type="radio" id="rdNam" name="gioi-tinh" value="0">
                                     <label for="nam">Nam</label>
-                                    <input type="radio" id="rdNu" name="gioi-tinh" value="Nữ">
+                                    <input type="radio" id="rdNu" name="gioi-tinh" value="1">
                                     <label for="nu">Nữ</label>
-                                    <input type="radio" id="rdKhac" name="gioi-tinh" value="Khác">
+                                    <input type="radio" id="rdKhac" name="gioi-tinh" value="2">
                                     <label for="nu">Khác</label>
                                 </div>
                             </div>
@@ -397,6 +382,28 @@
             </div>
         </div>
     </div>
+
+    <!--loading-->
+    <div class="m-loading">
+        <div id="loading-bar-spinner" class="spinner">
+            <div class="spinner-icon"></div>
+        </div>
+    </div>
+    <!--toast box-->
+    <div class="m-toast-box">
+        <div id="suc-toast" class="m-toast-item m-toast-item-suc">
+            <div class="m-toast-icon-suc"></div>
+            <div class="m-toast-text"></div>
+            <div class="m-toast-close"></div>
+        </div>
+        <div id="err-toast" class="m-toast-item m-toast-item-err">
+            <div class="m-toast-icon-err"></div>
+            <div class="m-toast-text"></div>
+            <div class="m-toast-close"></div>
+        </div>
+    </div>
+
+    <!--js-->
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/jquery-3.7.1.js"></script>
 
