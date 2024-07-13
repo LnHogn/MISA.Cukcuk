@@ -1,4 +1,5 @@
-.navbar{
+
+.navbar {
     width: 200px;
     height: 100%;
     flex-shrink: 0;
@@ -7,9 +8,9 @@
     position: relative;
 }
 
-.menu-item{
+.menu-item {
     display: flex;
-    height:44px ;
+    height: 44px;
     width: 176px;
     align-items: center;
     margin-left: 12px;
@@ -19,24 +20,54 @@
     cursor: pointer;
 }
 
-
-.menu-item:first-child{
+.menu-item:first-child {
     margin-top: 20px;
 }
-
-
 
 .menu-item-collapse {
     position: absolute;
     bottom: 0;
     width: 200px;
     display: flex;
-    height:44px ;
+    height: 44px;
     margin-bottom: 0;
     border-top: 2px solid #213553;
     align-items: center;
     cursor: pointer;
 }
+
+.navbar.collapsed {
+    width: 70px;
+}
+
+.navbar.collapsed .menu-item-collapse {
+    width: 50px;
+    border-top: none; /* Ẩn border-top khi thu gọn */
+}
+
+.navbar.collapsed .menu-item {
+    width: 54px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.navbar.collapsed .menu-text {
+    display: none;
+}
+
+.page-content {
+    transition: margin-left 0.3s ease;
+    margin-left: 0; /* Kích thước khi nav bar không bị thu gọn */
+}
+
+.page-content.expanded {
+    margin-left: 0; /* Kích thước khi nav bar bị thu gọn */
+}
+
+
+
+
+
 .menu-item-collapse:hover{
     background-color:rgba(167, 196, 255, 0.16); 
 
