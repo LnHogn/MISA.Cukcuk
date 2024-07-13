@@ -68,3 +68,7 @@
 .table-container::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Màu của thanh cuộn khi hover */
 }
+
+.highlighted {
+    background-color: #CCE4FF; /* Màu nền highlight */
+}

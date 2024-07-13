@@ -190,10 +190,12 @@
     display: flex;
     align-items: center;
 }
-
-tr:hover .actions {
-    visibility: visible;
+.actions.show {
+  visibility: visible;
 }
+/* tr:hover .actions {
+    visibility: visible;
+} */
 
 .actions button {
     margin-left: 5px;
