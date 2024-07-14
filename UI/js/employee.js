@@ -5,18 +5,36 @@ $(document).ready(function () {
     var idForUpdate = null;
     let highlightedRowId = null;
 
-    //them
+    //click nut them
     $("#btnAdd").click(function () {
-        flag = "add";
-        //hien thi form them
-        $("#dialog-them").find("input[type='text'], input[type='email'], input[type='date']").val("");
-        $("#dialog-them").find("input[type='radio']").prop('checked', false);
-        $("#dialog-them").show();
-        //focus o ma nhan vien
-        $("#txtMaNV").focus();
-        $("#dialog-them input").removeClass("m-input-err");
+        showAddEmployeeForm();
+    });
 
+    //khi ấn nút lưu, thực hiên them, sua nhan vien dựa theo flag
+    $("#btnSave").click(function () {
+        let employee = collectEmployeeData();
+        //loading
+        $('.m-loading').show();
+        saveEmployee(flag, employee);
     })
+
+    //xoa nhan vien
+    $(".m-table").on("click", "tr", function () {
+        highlightRowAndSetIdForDelete(this);
+    });
+    $(".m-table").on("click", "#btn-xoa", function () {
+        if (idForDelete) {
+            deleteEmployee(idForDelete);
+        } else {
+            alert("Vui lòng chọn nhân viên để xóa!");
+        }
+    });
+
+    //hien thi thong tin nhan vien
+    $(".m-table").on("dblclick", "tr", function () {
+        displayEmployeeInfo(this);
+    });
+
     //an form
     $("#btnClose").click(function () {
         $("#dialog-them").hide();
@@ -25,13 +43,24 @@ $(document).ready(function () {
         $("#dialog-them").hide();
     })
 
+    //an navbar
+    $('#toggle-navbar').click(function () {
+        $('#navbar').toggleClass('collapsed');
+        $('.page-content').toggleClass('expanded');
+    });
 
-    //hien thi thong tin
-    $(".m-table").on("dblclick", "tr", function () {
+    // Cập nhật border-top khi trang tải lên, nếu nav bar đã bị thu gọn
+    if ($('#navbar').hasClass('collapsed')) {
+        $('#toggle-navbar').css('border-top', 'none');
+    }
+
+    //cac function
+
+    //function hien thi thong tin nhan vien
+    function displayEmployeeInfo(row) {
         flag = "edit";
-        //lay doi tuong cua dong du lieu hien tai
-        let employee = $(this).data("infor");
-        console.log(employee);
+        // Lấy đối tượng của dòng dữ liệu hiện tại
+        let employee = $(row).data("infor");
         idForUpdate = employee.EmployeeId;
         $("#txtMaNV").val(employee.EmployeeCode);
         $("#txtHoTen").val(employee.FullName);
@@ -46,64 +75,56 @@ $(document).ready(function () {
         $("#dialog-them").show();
         $("#txtMaNV").focus();
         $("#dialog-them input").removeClass("m-input-err");
-    })
+    }
 
-    //xoa
-    // Xử lý sự kiện khi nhấn vào nút xóa
-    $(".m-table").on("click", "tr", function () {
+    // Xử lý sự kiện khi nhấn vào 1 dong, lay ra id de xoa
+    function highlightRowAndSetIdForDelete(row) {
         // Bỏ highlight dòng trước đó nếu có
-        $(".m-table tr").removeClass("highlighted").find(".actions").removeClass("show");        
+        $(".m-table tr").removeClass("highlighted").find(".actions").removeClass("show");
         // Highlight dòng hiện tại
-        $(this).addClass("highlighted");
-        $(this).find(".actions").addClass("show");
-
+        $(row).addClass("highlighted");
+        //hien thi nút xóa
+        $(row).find(".actions").addClass("show");
         // Lấy idForDelete từ dòng được highlight
-        let employee = $(this).data("infor");
+        let employee = $(row).data("infor");
         idForDelete = employee.EmployeeId;
-        
-    });
-    
-    $(".m-table").on("click","#btn-xoa",function () {
-        console.log(idForDelete);
-        if (idForDelete) {
-            // Hiển thị hộp thoại xác nhận
-            if (confirm("Bạn có chắc chắn muốn xóa nhân viên này không?")) {
-                // Thực hiện gọi API để xóa nhân viên
-                $.ajax({
-                    url: 'https://cukcuk.manhnv.net/api/v1/Employees/' + idForDelete,
-                    type: 'DELETE',
-                    success: function (response) {
-                        // Nếu xóa thành công
-                        alert("Nhân viên đã được xóa thành công!");
-                        // Xóa dữ liệu khỏi bảng nếu cần
-                        $(".m-table").find("tr[data-infor]").each(function () {
-                            let employee = $(this).data("infor");
-                            if (employee.EmployeeId === idForDelete) {
-                                $(this).remove(); // Xóa hàng trong bảng
-                                return false; // Thoát khỏi vòng lặp
-                            }
-                        });
-                        // Đặt lại idForUpdate để tránh xóa sai đối tượng
-                        idForUpdate = null;
-                        // Xóa highlight
-                        $(".m-table tr").removeClass("highlighted");
-                        // Load lại dữ liệu
-                        loadData();
-                    },
-                    error: function (xhr, status, error) {
-                        // Xử lý lỗi nếu có
-                        alert("Có lỗi xảy ra khi xóa nhân viên: " + error);
-                    }
-                });
-            }
-        } else {
-            alert("Vui lòng chọn nhân viên để xóa!");
+    }
+
+
+    // call api xóa nhân viên theo id
+    function deleteEmployee(id) {
+        if (confirm("Bạn có chắc chắn muốn xóa nhân viên này không?")) {
+            $.ajax({
+                url: 'https://cukcuk.manhnv.net/api/v1/Employees/' + id,
+                type: 'DELETE',
+                success: function (response) {
+                    // Nếu xóa thành công
+                    alert("Nhân viên đã được xóa thành công!");
+                    // Xóa dữ liệu khỏi bảng nếu cần
+                    $(".m-table").find("tr[data-infor]").each(function () {
+                        let employee = $(this).data("infor");
+                        if (employee.EmployeeId === id) {
+                            $(this).remove(); // Xóa hàng trong bảng
+                            return false; // Thoát khỏi vòng lặp
+                        }
+                    });
+                    // Đặt lại idForUpdate để tránh xóa sai đối tượng
+                    idForUpdate = null;
+                    // Xóa highlight
+                    $(".m-table tr").removeClass("highlighted");
+                    // Load lại dữ liệu
+                    loadData();
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý lỗi nếu có
+                    alert("Có lỗi xảy ra khi xóa nhân viên: " + error);
+                }
+            });
         }
-    });
-    
+    }
 
 
-    //load du lieu
+    //function load du lieu
     function loadData() {
         //clear du lieu
         $("table#table-emp tbody").empty();
@@ -164,9 +185,30 @@ $(document).ready(function () {
         });
     }
 
+    //function hiển thị form thêm nhân viên
+    function showAddEmployeeForm() {
+        //đặt cờ add để phân biệt thêm và sửa
+        flag = "add";
+        // Hiển thị form thêm
+        $("#dialog-them").find("input[type='text'], input[type='email'], input[type='date']").val("");
+        $("#dialog-them").find("input[type='radio']").prop('checked', false);
+        $("#dialog-them").show();
+        // Focus ở mã nhân viên
+        $("#txtMaNV").focus();
+        $("#dialog-them input").removeClass("m-input-err");
+    }
 
-    //them, sua nhan vien
-    $("#btnSave").click(function () {
+    //function chức năng của nút lưu với cờ là thêm hay sửa
+    function saveEmployee(flag, employee) {
+        if (flag === "add") {
+            addEmployee(employee);
+        } else {
+            updateEmployee(employee, idForUpdate);
+        }
+    }
+
+    //function thu thập dữ liệu nhân viên được nhập từ form
+    function collectEmployeeData() {
         let maNV = $("#txtMaNV").val();
         let hoTen = $("#txtHoTen").val();
         let ngaySinh = $("#dtDateOfBirth").val();
@@ -184,9 +226,9 @@ $(document).ready(function () {
         let chiNhanh = $("#txtChiNhanh").val();
         var GenderValue = $('input[name="gioi-tinh"]:checked').val();
         let GenderName = $("input[name='gioi-tinh']:checked").next('label').text();
-        //build object
+
+        // Tạo đối tượng employee từ dữ liệu form
         let employee = {
-            // "EmployeeId": maNV,
             "EmployeeCode": maNV,
             "FirstName": null,
             "LastName": null,
@@ -222,69 +264,72 @@ $(document).ready(function () {
             "CreatedBy": "Edra Brill",
             "ModifiedDate": "1992-05-11T06:55:38",
             "ModifiedBy": "Omar Hwang"
-        }
-        //loading
-        $('.m-loading').show();
-        if (flag == "add") {
-            //call api post
-            $.ajax({
-                type: "POST",
-                url: "https://cukcuk.manhnv.net/api/v1/Employees",
-                data: JSON.stringify(employee),
-                dataType: "json",
-                contentType: "application/json",
-                success: function (response) {
-                    //an loading
-                    $('.m-loading').hide();
-                    //an form
-                    $("#dialog-them").hide();
-                    //thong bao thanh cong
-                    $('#suc-toast .m-toast-text').text('Thêm thành công');
-                    showToast('#suc-toast');
-                    //load lai du lieu
-                    loadData();
+        };
+        return employee;
+    }
 
-                },
-                error: function (response) {
-                    var response = response.responseJSON;
-                    var errorMessage = response.errors.EmployeeCode ? response.errors.EmployeeCode[0] : 'Có lỗi xảy ra!';
-                    alert(errorMessage);
-                    //an loading
-                    $('.m-loading').hide();
-                }
+    //function thêm nhân viên
+    function addEmployee(employee) {
+        // Gọi API POST
+        $.ajax({
+            type: "POST",
+            url: "https://cukcuk.manhnv.net/api/v1/Employees",
+            data: JSON.stringify(employee),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (response) {
+                // Ẩn loading
+                $('.m-loading').hide();
+                // Ẩn form
+                $("#dialog-them").hide();
+                // Thông báo thành công
+                $('#suc-toast .m-toast-text').text('Thêm thành công');
+                showToast('#suc-toast');
+                // Load lại dữ liệu
+                loadData();
+            },
+            //sử lý lỗi
+            error: function (response) {
+                var response = response.responseJSON;
+                var errorMessage = response.errors.EmployeeCode ? response.errors.EmployeeCode[0] : 'Có lỗi xảy ra!';
+                alert(errorMessage);
+                // Ẩn loading
+                $('.m-loading').hide();
+            }
+        });
+    }
 
-            });
-        } else {
-            //call api put
-            $.ajax({
-                type: "PUT",
-                url: `https://cukcuk.manhnv.net/api/v1/Employees/${idForUpdate}`,
-                data: JSON.stringify(employee),
-                dataType: "json",
-                contentType: "application/json",
-                success: function (response) {
-                    //an loading
-                    $('.m-loading').hide();
-                    //an form
-                    $("#dialog-them").hide();
-                    //thong bao thanh cong
-                    $('#suc-toast .m-toast-text').text('Sửa thành công');
-                    showToast('#suc-toast');
-                    //load lai du lieu
-                    loadData();
-                },
-                error: function (response) {
-                    var response = response.responseJSON;
-                    var errorMessage = response.errors.EmployeeCode ? response.errors.EmployeeCode[0] : 'Có lỗi xảy ra!';
-                    alert(errorMessage);
-                    //an loading
-                    $('.m-loading').hide();
-                }
+    //function sửa nhân viên
+    function updateEmployee(employee, id) {
+        // Gọi API PUT
+        $.ajax({
+            type: "PUT",
+            url: `https://cukcuk.manhnv.net/api/v1/Employees/${id}`,
+            data: JSON.stringify(employee),
+            dataType: "json",
+            contentType: "application/json",
+            success: function (response) {
+                // Ẩn loading
+                $('.m-loading').hide();
+                // Ẩn form
+                $("#dialog-them").hide();
+                // Thông báo thành công
+                $('#suc-toast .m-toast-text').text('Sửa thành công');
+                showToast('#suc-toast');
+                // Load lại dữ liệu
+                loadData();
+            },
+            //sử lý lỗi
+            error: function (response) {
+                var response = response.responseJSON;
+                var errorMessage = response.errors.EmployeeCode ? response.errors.EmployeeCode[0] : 'Có lỗi xảy ra!';
+                alert(errorMessage);
+                // Ẩn loading
+                $('.m-loading').hide();
+            }
+        });
+    }
 
-            });
-        }
-
-    })
 
     //validate input
     function validateInput(input) {
@@ -353,6 +398,8 @@ $(document).ready(function () {
             }
         });
     }
+
+    //function hien thi thông báo ở góc màn hình
     function showToast(toastId) {
         var toast = $(toastId);
         toast.css('display', 'flex');
@@ -362,16 +409,5 @@ $(document).ready(function () {
             toast.css('display', 'none');
             toast.fadeOut();
         }, 1500);
-    }
-
-    //an navbar
-    $('#toggle-navbar').click(function () {
-        $('#navbar').toggleClass('collapsed');
-        $('.page-content').toggleClass('expanded');
-    });
-
-    // Cập nhật border-top khi trang tải lên, nếu nav bar đã bị thu gọn
-    if ($('#navbar').hasClass('collapsed')) {
-        $('#toggle-navbar').css('border-top', 'none');
     }
 });
