@@ -1,9 +1,9 @@
 $(document).ready(function () {
     //load du lieu
     loadData();
+    loadDepartments();
     var flag = "edit"
     var idForUpdate = null;
-    let highlightedRowId = null;
 
     //click nut them
     $("#btnAdd").click(function () {
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     //xoa nhan vien
     $(".m-table").on("click", "tr", function () {
-        highlightRowAndSetIdForDelete(this);
+        toggleHighlightRow(this);
     });
     $(".m-table").on("click", "#btn-xoa", function () {
         if (idForDelete) {
@@ -71,6 +71,8 @@ $(document).ready(function () {
         $("#txtDiaChi").val(employee.Address);
         $("#txtDTDD").val(employee.PhoneNumber);
         $("#txtEmail").val(employee.Email);
+        //hien thi thong tin phong ban
+        $("#cbPhongBan").val(employee.DepartmentId);
         $("input[name='gioi-tinh'][value='" + employee.Gender + "']").prop("checked", true);
         $("#dialog-them").show();
         $("#txtMaNV").focus();
@@ -78,16 +80,23 @@ $(document).ready(function () {
     }
 
     // Xử lý sự kiện khi nhấn vào 1 dong, lay ra id de xoa
-    function highlightRowAndSetIdForDelete(row) {
-        // Bỏ highlight dòng trước đó nếu có
-        $(".m-table tr").removeClass("highlighted").find(".actions").removeClass("show");
-        // Highlight dòng hiện tại
-        $(row).addClass("highlighted");
-        //hien thi nút xóa
-        $(row).find(".actions").addClass("show");
-        // Lấy idForDelete từ dòng được highlight
-        let employee = $(row).data("infor");
-        idForDelete = employee.EmployeeId;
+    function toggleHighlightRow(row) {
+        // Kiểm tra nếu dòng hiện tại đã được highlight
+        if ($(row).hasClass("highlighted")) {
+            // Nếu đã được highlight, thì gỡ bỏ highlight và ẩn nút xóa
+            $(".m-table tr").removeClass("highlighted").find(".actions").removeClass("show");
+            idForDelete = null; // Xóa giá trị của idForDelete
+        } else {
+            // Nếu chưa được highlight, thì bỏ highlight dòng trước đó nếu có
+            $(".m-table tr").removeClass("highlighted").find(".actions").removeClass("show");
+            // Highlight dòng hiện tại
+            $(row).addClass("highlighted");
+            // Hiển thị nút xóa
+            $(row).find(".actions").addClass("show");
+            // Lấy idForDelete từ dòng được highlight
+            let employee = $(row).data("infor");
+            idForDelete = employee.EmployeeId;
+        }
     }
 
 
@@ -123,6 +132,35 @@ $(document).ready(function () {
         }
     }
 
+    //function call api lay du lieu phong ban
+    function loadDepartments() {
+        $.ajax({
+            url: 'https://cukcuk.manhnv.net/api/v1/Departments',
+            method: 'GET',
+            success: function(response) {               
+                populateCombobox(response);
+            },
+            error: function(response) {
+                console.error('Error fetching departments:', response);
+            }
+        });
+    }
+
+    //function hien thi du lieu len combobox
+    function populateCombobox(response) {
+        for(const department of response){
+            var option = $('<option>', {
+                value: department.DepartmentId,
+                text: department.DepartmentName
+            });
+            $('#cbPhongBan').append(option);
+        }
+    }
+
+    //su ly su kien khi chon phong ban trong combobox
+    function handleDepartmentChange() {
+        return selectedDepartmentId = $(this).val();
+    }
 
     //function load du lieu
     function loadData() {
@@ -192,10 +230,13 @@ $(document).ready(function () {
         // Hiển thị form thêm
         $("#dialog-them").find("input[type='text'], input[type='email'], input[type='date']").val("");
         $("#dialog-them").find("input[type='radio']").prop('checked', false);
+        $("#dialog-them").find("select").val('default');
         $("#dialog-them").show();
         // Focus ở mã nhân viên
         $("#txtMaNV").focus();
         $("#dialog-them input").removeClass("m-input-err");
+        //hien thi phong ban
+        $('#cbPhongBan').change(handleDepartmentChange);
     }
 
     //function chức năng của nút lưu với cờ là thêm hay sửa
@@ -216,6 +257,7 @@ $(document).ready(function () {
         let soCMT = $("#txtSoCMT").val();
         let ngayCap = $("#dtNgayCap").val();
         let phongBan = $("#cbPhongBan").val();
+        let tenPhongBan = $('#cbPhongBan option:selected').text();
         let noiCap = $("#txtNoiCap").val();
         let diaChi = $("#txtDiaChi").val();
         let diDong = $("#txtDTDD").val();
@@ -245,7 +287,7 @@ $(document).ready(function () {
             "MartialStatus": 4,
             "EducationalBackground": 4,
             "QualificationId": "3541ff76-58f0-6d1a-e836-63d5d5eff719",
-            "DepartmentId": "3f8e6896-4c7d-15f5-a018-75d8bd200d7c",
+            "DepartmentId": phongBan,
             "PositionId": "589edf01-198a-4ff5-958e-fb52fd75a1d4",
             "NationalityId": "b5cf83af-f756-11ec-9b48-00163e06abee",
             "WorkStatus": null,
@@ -254,7 +296,7 @@ $(document).ready(function () {
             "PositionCode": null,
             "PositionName": null,
             "DepartmentCode": null,
-            "DepartmentName": null,
+            "DepartmentName": tenPhongBan,
             "QualificationName": null,
             "NationalityName": null,
             "GenderName": GenderName,
