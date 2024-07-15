@@ -157,11 +157,6 @@ $(document).ready(function () {
         }
     }
 
-    //su ly su kien khi chon phong ban trong combobox
-    function handleDepartmentChange() {
-        return selectedDepartmentId = $(this).val();
-    }
-
     //function load du lieu
     function loadData() {
         //clear du lieu
@@ -235,8 +230,6 @@ $(document).ready(function () {
         // Focus ở mã nhân viên
         $("#txtMaNV").focus();
         $("#dialog-them input").removeClass("m-input-err");
-        //hien thi phong ban
-        $('#cbPhongBan').change(handleDepartmentChange);
     }
 
     //function chức năng của nút lưu với cờ là thêm hay sửa
