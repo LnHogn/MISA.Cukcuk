@@ -32,3 +32,40 @@ C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk\WebApi\MISA.Cukcuk.API\MISA.
 C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.pdb
 C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.genruntimeconfig.cache
 C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\ref\MISA.Cukcuk.API.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\appsettings.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\MISA.Cukcuk.API.exe
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\MISA.Cukcuk.API.deps.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\MISA.Cukcuk.API.runtimeconfig.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\MISA.Cukcuk.API.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\MISA.Cukcuk.API.pdb
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Dapper.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\MySqlConnector.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.csproj.AssemblyReference.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.AssemblyInfoInputs.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.AssemblyInfo.cs
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.csproj.CoreCompileInputs.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.sourcelink.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets\msbuild.MISA.Cukcuk.API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets\msbuild.build.MISA.Cukcuk.API.props
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.MISA.Cukcuk.API.props
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.MISA.Cukcuk.API.props
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\scopedcss\bundle\MISA.Cukcuk.API.styles.css
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.csproj.CopyComplete
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\refint\MISA.Cukcuk.API.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.pdb
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\MISA.Cukcuk.API.genruntimeconfig.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Cukcuk.API\obj\Debug\net7.0\ref\MISA.Cukcuk.API.dll

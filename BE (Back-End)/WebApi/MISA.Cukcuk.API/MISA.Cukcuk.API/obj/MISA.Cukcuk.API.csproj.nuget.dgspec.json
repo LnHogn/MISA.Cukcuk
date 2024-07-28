@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj": {}
+    "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj": {
+    "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj",
+        "projectUniqueName": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj",
         "projectName": "MISA.Cukcuk.API",
-        "projectPath": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj",
+        "projectPath": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\MISA.Cukcuk.API.csproj",
         "packagesPath": "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\obj\\",
+        "outputPath": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Cukcuk.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LN_HOGNNN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.14, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.3.7, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

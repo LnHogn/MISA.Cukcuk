@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MISA.Cukcuk.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f550afba3a25e3aab0f48f0ffd1dd5c055cd4311")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+030493c2a3cedad3e9e07c048557b94c86157667")]
 [assembly: System.Reflection.AssemblyProductAttribute("MISA.Cukcuk.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MISA.Cukcuk.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
