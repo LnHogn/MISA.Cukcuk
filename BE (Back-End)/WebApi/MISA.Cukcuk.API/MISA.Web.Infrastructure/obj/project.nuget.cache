@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "3QJ0mAiK0V5QrNBcGziCH/Wd9zUZuQX7aUXQRzZCcqN0OFptn9BHDh/uZo5VGl42Pd1c9TG5eCaauN2gmzbj+w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Web.Infrastructure\\MISA.Web.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\mysqlconnector\\2.3.7\\mysqlconnector.2.3.7.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

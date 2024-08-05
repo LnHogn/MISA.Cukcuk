@@ -1,0 +1,12 @@
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\bin\Debug\net7.0\MISA.Web.Core.deps.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\bin\Debug\net7.0\MISA.Web.Core.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\bin\Debug\net7.0\MISA.Web.Core.pdb
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.AssemblyInfoInputs.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.AssemblyInfo.cs
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.csproj.CoreCompileInputs.cache
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.sourcelink.json
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\refint\MISA.Web.Core.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.pdb
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\ref\MISA.Web.Core.dll

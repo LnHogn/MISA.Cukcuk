@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fBBVycitTzC7fJezUF12k/r4b2qNxhPbc8R8JPA5abaE9RZQFjzYcKqGV8kimlObTr8CXxBw66wNCuEK0RpmqQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LN_HOGNNN\\Desktop\\hk6\\thuc_tap\\MISA.Cukcuk_clone\\BE (Back-End)\\WebApi\\MISA.Cukcuk.API\\MISA.Web.Core\\MISA.Web.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\LN_HOGNNN\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}
