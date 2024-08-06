@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using MISA.Web.Core.Entities;
 using MISA.Web.Core.Exceptions;
+using MISA.Web.Core.Interfaces.Infrastructure;
+using MISA.Web.Core.Interfaces.Services;
 using MISA.Web.Core.Services;
 using MISA.Web.Infrastructure.Repository;
 
@@ -11,12 +13,21 @@ namespace MISA.Web.Api.Controllers
     [ApiController]
     public class EmployeesController : Controller
     {
+
+        IEmployeeRepository _employeeRepository;
+        IEmployeeService _employeeService;
+
+        public EmployeesController(IEmployeeRepository employeeRepository, IEmployeeService employeeService)
+        {
+            _employeeRepository = employeeRepository;
+            _employeeService = employeeService;
+        }
+
         [HttpGet]
         public IActionResult Get()
         {
             //lay du lieu:
-            EmployeeRepository employeeRepository = new EmployeeRepository();
-            var employees = employeeRepository.GetAll();
+            var employees = _employeeRepository.GetAll();
             return Ok(employees);
         }
 
@@ -24,8 +35,7 @@ namespace MISA.Web.Api.Controllers
         public IActionResult GetByID(Guid EmployeeId)
         {
             //lay du lieu
-            EmployeeRepository EmployeeRepository = new EmployeeRepository();
-            var employees = EmployeeRepository.GetAll();
+            var employees = _employeeRepository.GetById(EmployeeId);
             return Ok(employees);
         }
 
@@ -35,12 +45,8 @@ namespace MISA.Web.Api.Controllers
             try
             {
                 //validate du lieu
-                EmployeeService employeeService = new EmployeeService();
-                var res = employeeService.InsertService(employee);
-                //them du lieu vao database
-                EmployeeRepository employeeRepository = new EmployeeRepository();
-                var res2 = employeeRepository.Insert(employee);  
-                return Ok(res);                
+                var res = _employeeService.InsertService(employee);
+                return StatusCode(201,res);                
 
             }
             catch (MISAValidateException ex)
@@ -69,7 +75,27 @@ namespace MISA.Web.Api.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteEmployee(Guid id)
         {
-            return Ok();
+            try
+            {
+                //validate du lieu
+                var res = _employeeRepository.Delete(id);
+                return StatusCode(201, res);
+
+            }
+            catch (MISAValidateException ex)
+            {
+                var response = new
+                {
+                    DevMsg = ex.Message,
+                    userMsg = ex.Message,
+                    data = "",
+                };
+                return BadRequest(response);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

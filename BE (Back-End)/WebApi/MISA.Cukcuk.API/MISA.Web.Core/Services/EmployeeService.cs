@@ -1,5 +1,6 @@
 ﻿using MISA.Web.Core.Entities;
 using MISA.Web.Core.Exceptions;
+using MISA.Web.Core.Interfaces.Infrastructure;
 using MISA.Web.Core.Interfaces.Services;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,14 @@ namespace MISA.Web.Core.Services
 {
     public class EmployeeService : IEmployeeService
     {
+
+        IEmployeeRepository _employeeRepository;
+        public EmployeeService(IEmployeeRepository employeeRepository)
+        {
+            _employeeRepository = employeeRepository;
+        }
         public int InsertService(Employee employee)
         {
-            //validate data
             //validate data
             var errorData = new Dictionary<string, string>();
             var errorMsg = new List<string>();
@@ -23,11 +29,11 @@ namespace MISA.Web.Core.Services
                 throw new MISAValidateException("Mã nhân viên không được phép để trống");
             }
             //check ma nv ko dc trung
-            //if (CheckEmpCode(employee.EmployeeCode))
-            //{
-            //    errorData.Add("EmployeeCode", "Mã nhân viên không được trùng lặp");
-            //    errorMsg.Add("Mã nhân viên không được trùng lặp");
-            //}
+            var isDuplidate = _employeeRepository.CheckEmpCode(employee.EmployeeCode);
+            if (isDuplidate)
+            {
+                throw new MISAValidateException("Mã nhân viên không được phép trùng");
+            }
             //họ tên không được để trống
             if (string.IsNullOrEmpty(employee.FullName))
             {
@@ -52,7 +58,9 @@ namespace MISA.Web.Core.Services
                 errorData.Add("Email", "Email không đúng định dạng");
                 errorMsg.Add("Email không đúng định dạng");
             }
-            return 1;
+            //them moi vao database
+            var res = _employeeRepository.Insert(employee);
+            return res;
         }
 
         public int UpdateService(Employee employee, Guid employeeId)
@@ -79,21 +87,5 @@ namespace MISA.Web.Core.Services
                 return false;
             }
         }
-
-        //CHECK TRÙNG MÃ NV
-        //private bool CheckEmpCode(string employeeCode)
-        //{
-        //    // Khởi tạo kết nối cơ sở dữ liệu
-        //    var connectionString = "Host=8.222.228.150; Port=3306; Database=HAUI_2021600453_LamNguyenHong; User id=manhnv; Password=12345678";
-        //    using var sqlConnection = new MySqlConnection(connectionString);
-        //    //check trung
-        //    var sqlCheck = "select EmployeeCode from Employee where EmployeeCode = @EmployeeCode";
-        //    var dynamic = new DynamicParameters();
-        //    dynamic.Add("@EmployeeCode", employeeCode);
-        //    var res = sqlConnection.QueryFirstOrDefault<string>(sqlCheck, param: dynamic);
-        //    if (res != null)
-        //        return true;
-        //    return false;
-        //}
     }
 }
