@@ -23,7 +23,7 @@ namespace MISA.Web.Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var departments = _employeeRepository.GetPositions();
+            var departments = _employeeRepository.GetAll();
             return Ok(departments);
         }
     }

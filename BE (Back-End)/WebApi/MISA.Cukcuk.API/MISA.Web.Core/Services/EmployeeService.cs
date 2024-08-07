@@ -21,8 +21,6 @@ namespace MISA.Web.Core.Services
         public int InsertService(Employee employee)
         {
             //validate data
-            var errorData = new Dictionary<string, string>();
-            var errorMsg = new List<string>();
             //mã nhân viên không được để trống
             if (string.IsNullOrEmpty(employee.EmployeeCode))
             {              
@@ -37,26 +35,22 @@ namespace MISA.Web.Core.Services
             //họ tên không được để trống
             if (string.IsNullOrEmpty(employee.FullName))
             {
-                errorData.Add("FullName", "Tên nhân viên không được phép để trống");
-                errorMsg.Add("Tên nhân viên không được phép để trống");
+                throw new MISAValidateException("Tên nhân viên không được phép để trống");
             }
             //so dien thoai
             if (string.IsNullOrEmpty(employee.PhoneNumber))
             {
-                errorData.Add("PhoneNumber", "Sdt nhân viên không được phép để trống");
-                errorMsg.Add("Sdt nhân viên không được phép để trống");
+                throw new MISAValidateException("Sdt nhân viên không được phép để trống");
             }
             //so cccd
             if (string.IsNullOrEmpty(employee.IdentityNumber))
             {
-                errorData.Add("IdentityNumber", "So cccd không được phép để trống");
-                errorMsg.Add("So cccd không được phép để trống");
+                throw new MISAValidateException("Số cccd nhân viên không được phép để trống");
             }
             //email
             if (!IsValidEmail(employee.Email))
             {
-                errorData.Add("Email", "Email không đúng định dạng");
-                errorMsg.Add("Email không đúng định dạng");
+                throw new MISAValidateException("Email không đúng định dạng");
             }
             //them moi vao database
             var res = _employeeRepository.Insert(employee);

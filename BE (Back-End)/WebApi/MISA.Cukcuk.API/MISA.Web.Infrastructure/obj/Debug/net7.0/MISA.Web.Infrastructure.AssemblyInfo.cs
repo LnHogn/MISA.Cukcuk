@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MISA.Web.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+baacaaccca40ca1d7cb743b9c6b5f3ca3038b542")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af565703e9a3f51f4dc630e9c26fb0b989cdff02")]
 [assembly: System.Reflection.AssemblyProductAttribute("MISA.Web.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MISA.Web.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

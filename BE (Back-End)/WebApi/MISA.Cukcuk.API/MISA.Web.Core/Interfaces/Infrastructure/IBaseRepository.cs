@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace MISA.Web.Core.Interfaces.Infrastructure
 {
-    public interface IDepartmentRepository:IBaseRepository<Department>
+    public interface IBaseRepository<MISAEntity>
     {
-
+        IEnumerable<MISAEntity> GetAll();
     }
 }

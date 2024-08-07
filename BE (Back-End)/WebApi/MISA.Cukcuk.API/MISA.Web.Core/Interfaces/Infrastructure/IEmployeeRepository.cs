@@ -8,17 +8,13 @@ using System.Threading.Tasks;
 
 namespace MISA.Web.Core.Interfaces.Infrastructure
 {
-    public interface IEmployeeRepository
+    public interface IEmployeeRepository:IBaseRepository<Employee>
     {
-        IEnumerable<Employee> GetAll();
         Employee GetById(Guid employeeId);
         int Insert(Employee employee);
         int Update(Employee employee, Guid employeeId);
         int Delete(Guid employeeId);
 
         bool CheckEmpCode(string employeeCode); 
-
-
-        IEnumerable<Positions> GetPositions();
     }
 }

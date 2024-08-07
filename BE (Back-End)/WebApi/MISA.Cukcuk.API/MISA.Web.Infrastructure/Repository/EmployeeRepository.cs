@@ -10,10 +10,9 @@ using MySqlConnector;
 
 namespace MISA.Web.Infrastructure.Repository
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository :BaseRepository<Employee>, IEmployeeRepository
     {
-        readonly string _connectionString = "Host=8.222.228.150; Port=3306; Database=HAUI_2021600453_LamNguyenHong; User id=manhnv; Password=12345678";
-        MySqlConnection _mySqlConnection;
+        
         public bool CheckEmpCode(string employeeCode)
         {
             using (_mySqlConnection = new MySqlConnection(_connectionString))
@@ -41,43 +40,13 @@ namespace MISA.Web.Infrastructure.Repository
 
         public IEnumerable<Employee> GetAll()
         {
-            using (_mySqlConnection = new MySqlConnection(_connectionString))
-            {
-                //lay du lieu
-                var sqlCommand = "select * from Employee";
-                var employees = _mySqlConnection.Query<Employee>(sql: sqlCommand);
-                //tra ket qua
-                return employees;
-            }
+            return GetAll();
         }
 
         public Employee GetById(Guid EmployeeId)
         {
-            using (_mySqlConnection = new MySqlConnection(_connectionString))
-            {
-                //lay du lieu
-                var sqlCommand = "select * from Employee where EmployeeId = @EmployeeId";
-                DynamicParameters dynamicParameters = new DynamicParameters();
-                dynamicParameters.Add("@EmployeeId", EmployeeId);
-                //truy van du lieu trong database
-                var employee = _mySqlConnection.QueryFirstOrDefault<Employee>(sql: sqlCommand, param: dynamicParameters);
-                //tra ket qua
-                return employee;
-            }
-        }
-
-
-        public IEnumerable<Positions> GetPositions()
-        {
-            using (_mySqlConnection = new MySqlConnection(_connectionString))
-            {
-                //lay du lieu
-                var sqlCommand = "select * from Positions";
-                var positions = _mySqlConnection.Query<Positions>(sql: sqlCommand);
-                //tra ket qua
-                return positions;
-            }
-        }
+            return GetById(EmployeeId);
+        }      
 
         public int Insert(Employee employee)
         {
