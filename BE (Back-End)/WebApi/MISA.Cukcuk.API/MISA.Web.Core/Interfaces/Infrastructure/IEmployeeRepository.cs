@@ -16,5 +16,7 @@ namespace MISA.Web.Core.Interfaces.Infrastructure
         int Delete(Guid employeeId);
 
         bool CheckEmpCode(string employeeCode); 
+
+        bool CheckEmpId(Guid employeeId);
     }
 }

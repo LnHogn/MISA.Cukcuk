@@ -42,7 +42,7 @@ namespace MISA.Web.Infrastructure.Repository
                 //lay du lieu
                 var sqlCommand = $"select * from {className} where {className}Id = @{className}Id";
                 DynamicParameters dynamicParameters = new DynamicParameters();
-                dynamicParameters.Add($"@{className}d", entityId);
+                dynamicParameters.Add($"@{className}Id", entityId);
                 //truy van du lieu trong database
                 var entity = _mySqlConnection.QueryFirstOrDefault<MISAEntity>(sql: sqlCommand, param: dynamicParameters);
                 //tra ket qua

@@ -16,5 +16,7 @@ namespace MISA.Web.Infrastructure.Repository
         {
             return GetAll<Department>();
         }
+
+        
     }
 }

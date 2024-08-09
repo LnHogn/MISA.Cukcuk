@@ -59,7 +59,13 @@ namespace MISA.Web.Core.Services
 
         public int UpdateService(Employee employee, Guid employeeId)
         {
-            throw new NotImplementedException();
+            var isDuplicateId = _employeeRepository.CheckEmpId(employeeId);
+            if (isDuplicateId)
+            {
+                throw new MISAValidateException("nhân viên không tồn tại");
+            }
+            var res = _employeeRepository.Update(employee, employeeId);
+            return res;
         }
 
         //VALIDATE EMAIL

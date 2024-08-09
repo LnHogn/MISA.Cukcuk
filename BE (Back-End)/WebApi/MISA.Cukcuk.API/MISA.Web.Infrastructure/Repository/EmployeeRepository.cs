@@ -28,25 +28,36 @@ namespace MISA.Web.Infrastructure.Repository
             }          
         }
 
+        public bool CheckEmpId(Guid employeeId)
+        {
+            using(_mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                var existingEmployee = _mySqlConnection.QueryFirstOrDefault<Employee>("SELECT * FROM Employee WHERE EmployeeId = @Id", new { Id = employeeId });
+                if (existingEmployee == null)
+                    return true;
+                return false;
+            }
+        }
+
         public int Delete(Guid employeeId)
         {
             using (_mySqlConnection = new MySqlConnection(_connectionString))
             {
                 var sqlCommand = "DELETE FROM Employee WHERE EmployeeId = @Id";
-                var res = _mySqlConnection.Execute(sqlCommand, new { EmployeeId = employeeId });
+                var res = _mySqlConnection.Execute(sqlCommand, new { Id = employeeId });
                 return res;
             }
         }
 
         public IEnumerable<Employee> GetAll()
         {
-            return GetAll();
+            return GetAll<Employee>();
         }
 
-        public Employee GetById(Guid EmployeeId)
+        public Employee GetbyId(Guid enployeeId)
         {
-            return GetById(EmployeeId);
-        }      
+            return GetById(enployeeId);
+        }
 
         public int Insert(Employee employee)
         {
@@ -71,7 +82,37 @@ namespace MISA.Web.Infrastructure.Repository
 
         public int Update(Employee employee, Guid employeeId)
         {
-            throw new NotImplementedException();
+            using (_mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                var sqlCommand = @"
+            UPDATE Employee
+            SET EmployeeCode = @EmployeeCode,
+                FullName = @FullName,
+                DateOfBirth = @DateOfBirth,
+                Gender = @Gender,
+                IdentityNumber = @IdentityNumber,
+                IdentityDate = @IdentityDate,
+                IdentityPlace = @IdentityPlace,
+                Email = @Email,
+                PhoneNumber = @PhoneNumber,
+                Address = @Address,
+                LandlineNumber = @LandlineNumber,
+                BankAccount = @BankAccount,
+                BankName = @BankName,
+                Branch = @Branch,
+                PositionId = @PositionId,
+                DepartmentId = @DepartmentId,
+                ModifiedDate = @ModifiedDate,
+                ModifiedBy = @ModifiedBy
+            WHERE EmployeeId = @EmployeeId";
+
+                employee.EmployeeId = employeeId;
+                employee.ModifiedDate = DateTime.Now;
+
+                var res = _mySqlConnection.Execute(sqlCommand, param: employee);
+
+                return res;
+            }
         }
     }
 }

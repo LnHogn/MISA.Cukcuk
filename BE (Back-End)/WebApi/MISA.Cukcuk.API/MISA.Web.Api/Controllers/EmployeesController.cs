@@ -31,7 +31,7 @@ namespace MISA.Web.Api.Controllers
             return Ok(employees);
         }
 
-        [HttpGet("EmployeeId")]
+        [HttpGet("{EmployeeId}")]
         public IActionResult GetByID(Guid EmployeeId)
         {
             //lay du lieu
@@ -69,7 +69,25 @@ namespace MISA.Web.Api.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateEmployee(Guid id, [FromBody] Employee employee)
         {
-            return Ok();
+            try
+            {
+                var res = _employeeService.UpdateService(employee, id);
+                return Ok(res);
+            }
+            catch(MISAValidateException ex)
+            {
+                var response = new
+                {
+                    DevMsg = ex.Message,
+                    userMsg = ex.Message,
+                    data = employee,
+                };
+                return BadRequest(response);
+            }
+            catch(Exception)
+            {
+                throw;
+            }
         }
 
         [HttpDelete("{id}")]

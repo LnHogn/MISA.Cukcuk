@@ -10,5 +10,6 @@ namespace MISA.Web.Core.Interfaces.Infrastructure
     public interface IBaseRepository<MISAEntity>
     {
         IEnumerable<MISAEntity> GetAll();
+        
     }
 }
