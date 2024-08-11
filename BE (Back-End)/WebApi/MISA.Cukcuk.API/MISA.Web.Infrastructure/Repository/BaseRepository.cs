@@ -50,5 +50,17 @@ namespace MISA.Web.Infrastructure.Repository
             }
         }
 
+        public int Delete(Guid entityId)
+        {
+            var className = typeof(MISAEntity).Name;
+            using (_mySqlConnection = new MySqlConnection(_connectionString))
+            {
+                var sqlCommand = $"DELETE FROM {className} WHERE {className}Id = @Id";
+                var res = _mySqlConnection.Execute(sqlCommand, new { Id = entityId });
+                return res;
+            }
+
+        }
+
     }
 }

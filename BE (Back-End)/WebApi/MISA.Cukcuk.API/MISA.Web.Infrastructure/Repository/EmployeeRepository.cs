@@ -41,12 +41,7 @@ namespace MISA.Web.Infrastructure.Repository
 
         public int Delete(Guid employeeId)
         {
-            using (_mySqlConnection = new MySqlConnection(_connectionString))
-            {
-                var sqlCommand = "DELETE FROM Employee WHERE EmployeeId = @Id";
-                var res = _mySqlConnection.Execute(sqlCommand, new { Id = employeeId });
-                return res;
-            }
+            return base.Delete(employeeId);
         }
 
         public IEnumerable<Employee> GetAll()

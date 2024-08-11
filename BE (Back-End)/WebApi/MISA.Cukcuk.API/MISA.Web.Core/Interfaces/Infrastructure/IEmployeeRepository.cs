@@ -11,9 +11,7 @@ namespace MISA.Web.Core.Interfaces.Infrastructure
     public interface IEmployeeRepository:IBaseRepository<Employee>
     {
         Employee GetById(Guid employeeId);
-        int Insert(Employee employee);
-        int Update(Employee employee, Guid employeeId);
-        int Delete(Guid employeeId);
+        
 
         bool CheckEmpCode(string employeeCode); 
 

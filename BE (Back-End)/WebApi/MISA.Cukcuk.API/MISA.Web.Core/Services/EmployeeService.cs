@@ -10,63 +10,15 @@ using System.Threading.Tasks;
 
 namespace MISA.Web.Core.Services
 {
-    public class EmployeeService : IEmployeeService
+    public class EmployeeService :BaseService<Employee>, IEmployeeService
     {
 
         IEmployeeRepository _employeeRepository;
-        public EmployeeService(IEmployeeRepository employeeRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository):base(employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
-        public int InsertService(Employee employee)
-        {
-            //validate data
-            //mã nhân viên không được để trống
-            if (string.IsNullOrEmpty(employee.EmployeeCode))
-            {              
-                throw new MISAValidateException("Mã nhân viên không được phép để trống");
-            }
-            //check ma nv ko dc trung
-            var isDuplidate = _employeeRepository.CheckEmpCode(employee.EmployeeCode);
-            if (isDuplidate)
-            {
-                throw new MISAValidateException("Mã nhân viên không được phép trùng");
-            }
-            //họ tên không được để trống
-            if (string.IsNullOrEmpty(employee.FullName))
-            {
-                throw new MISAValidateException("Tên nhân viên không được phép để trống");
-            }
-            //so dien thoai
-            if (string.IsNullOrEmpty(employee.PhoneNumber))
-            {
-                throw new MISAValidateException("Sdt nhân viên không được phép để trống");
-            }
-            //so cccd
-            if (string.IsNullOrEmpty(employee.IdentityNumber))
-            {
-                throw new MISAValidateException("Số cccd nhân viên không được phép để trống");
-            }
-            //email
-            if (!IsValidEmail(employee.Email))
-            {
-                throw new MISAValidateException("Email không đúng định dạng");
-            }
-            //them moi vao database
-            var res = _employeeRepository.Insert(employee);
-            return res;
-        }
-
-        public int UpdateService(Employee employee, Guid employeeId)
-        {
-            var isDuplicateId = _employeeRepository.CheckEmpId(employeeId);
-            if (isDuplicateId)
-            {
-                throw new MISAValidateException("nhân viên không tồn tại");
-            }
-            var res = _employeeRepository.Update(employee, employeeId);
-            return res;
-        }
+        
 
         //VALIDATE EMAIL
         bool IsValidEmail(string email)
@@ -85,6 +37,21 @@ namespace MISA.Web.Core.Services
             catch
             {
                 return false;
+            }
+        }
+
+        protected override void ValidateEmployee(Employee employee)
+        {
+            //check ma nv ko dc trung
+                var isDuplidate = _employeeRepository.CheckEmpCode(employee.EmployeeCode);
+            if (isDuplidate)
+            {
+                throw new MISAValidateException("Mã nhân viên không được phép trùng");
+            }
+            //email
+            if (!IsValidEmail(employee.Email))
+            {
+                throw new MISAValidateException("Email không đúng định dạng");
             }
         }
     }

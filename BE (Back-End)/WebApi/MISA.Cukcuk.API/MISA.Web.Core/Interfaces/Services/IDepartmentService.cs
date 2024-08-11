@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MISA.Web.Core.Interfaces.Infrastructure
+namespace MISA.Web.Core.Interfaces.Services
 {
-    public interface IDepartmentRepository:IBaseRepository<Department>
+    public interface IDepartmentService:IBaseService<Department>
     {
+        
         
     }
 }
