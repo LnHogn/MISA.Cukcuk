@@ -56,58 +56,12 @@ namespace MISA.Web.Infrastructure.Repository
 
         public int Insert(Employee employee)
         {
-            using (_mySqlConnection = new MySqlConnection(_connectionString))
-            {
-
-                // Thêm nhân viên mới vào cơ sở dữ liệu
-                var sqlCommand = @"
-                        INSERT INTO Employee (EmployeeId, EmployeeCode, FullName, DateOfBirth, Gender, IdentityNumber, IdentityDate, IdentityPlace, Email, PhoneNumber, Address, LandlineNumber, BankAccount, BankName, Branch, PositionId, DepartmentId, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy)
-                        VALUES (@EmployeeId, @EmployeeCode, @FullName, @DateOfBirth, @Gender, @IdentityNumber, @IdentityDate, @IdentityPlace, @Email, @PhoneNumber, @Address, @LandlineNumber, @BankAccount, @BankName, @Branch, @PositionId, @DepartmentId, @CreatedDate, @CreatedBy, @ModifiedDate, @ModifiedBy)";
-
-                employee.EmployeeId = Guid.NewGuid();
-                employee.CreatedDate = DateTime.Now;
-                employee.ModifiedDate = DateTime.Now;
-                employee.CreatedBy = "lam nguyen hong";
-                employee.ModifiedBy = "lam nguyen hong";
-
-                var res = _mySqlConnection.Execute(sqlCommand, param: employee);
-                return res;
-            }
+            return base.Insert(employee);
         }
 
         public int Update(Employee employee, Guid employeeId)
         {
-            using (_mySqlConnection = new MySqlConnection(_connectionString))
-            {
-                var sqlCommand = @"
-            UPDATE Employee
-            SET EmployeeCode = @EmployeeCode,
-                FullName = @FullName,
-                DateOfBirth = @DateOfBirth,
-                Gender = @Gender,
-                IdentityNumber = @IdentityNumber,
-                IdentityDate = @IdentityDate,
-                IdentityPlace = @IdentityPlace,
-                Email = @Email,
-                PhoneNumber = @PhoneNumber,
-                Address = @Address,
-                LandlineNumber = @LandlineNumber,
-                BankAccount = @BankAccount,
-                BankName = @BankName,
-                Branch = @Branch,
-                PositionId = @PositionId,
-                DepartmentId = @DepartmentId,
-                ModifiedDate = @ModifiedDate,
-                ModifiedBy = @ModifiedBy
-            WHERE EmployeeId = @EmployeeId";
-
-                employee.EmployeeId = employeeId;
-                employee.ModifiedDate = DateTime.Now;
-
-                var res = _mySqlConnection.Execute(sqlCommand, param: employee);
-
-                return res;
-            }
+            return base.Update(employee, employeeId);
         }
     }
 }

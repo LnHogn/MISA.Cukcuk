@@ -11,26 +11,19 @@ namespace MISA.Web.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeesController : Controller
+    public class EmployeesController : MISABaseController<Employee>
     {
 
         IEmployeeRepository _employeeRepository;
         IEmployeeService _employeeService;
 
-        public EmployeesController(IEmployeeRepository employeeRepository, IEmployeeService employeeService)
+        public EmployeesController(IEmployeeRepository employeeRepository, IEmployeeService employeeService):base(employeeRepository, employeeService)
         {
             _employeeRepository = employeeRepository;
             _employeeService = employeeService;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            //lay du lieu:
-            var employees = _employeeRepository.GetAll();
-            return Ok(employees);
-        }
-
+        
         [HttpGet("{EmployeeId}")]
         public IActionResult GetByID(Guid EmployeeId)
         {
@@ -39,81 +32,5 @@ namespace MISA.Web.Api.Controllers
             return Ok(employees);
         }
 
-        [HttpPost]
-        public IActionResult AddEmployee([FromBody] Employee employee)
-        {
-            try
-            {
-                //validate du lieu
-                var res = _employeeService.InsertService(employee);
-                return StatusCode(201,res);                
-
-            }
-            catch (MISAValidateException ex)
-            {
-                var response = new
-                {
-                    DevMsg = ex.Message,
-                    userMsg = ex.Message,
-                    data = employee,
-                };
-                return BadRequest(response);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult UpdateEmployee(Guid id, [FromBody] Employee employee)
-        {
-            try
-            {
-                var res = _employeeService.UpdateService(employee, id);
-                return Ok(res);
-            }
-            catch(MISAValidateException ex)
-            {
-                var response = new
-                {
-                    DevMsg = ex.Message,
-                    userMsg = ex.Message,
-                    data = employee,
-                };
-                return BadRequest(response);
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult DeleteEmployee(Guid id)
-        {
-            try
-            {
-                //validate du lieu
-                var res = _employeeRepository.Delete(id);
-                return StatusCode(201, res);
-
-            }
-            catch (MISAValidateException ex)
-            {
-                var response = new
-                {
-                    DevMsg = ex.Message,
-                    userMsg = ex.Message,
-                    data = "",
-                };
-                return BadRequest(response);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
     }
 }

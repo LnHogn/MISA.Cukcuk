@@ -51,7 +51,7 @@ namespace MISA.Web.Core.Services
                 if(propVal == null || string.IsNullOrEmpty(propVal.ToString()))
                 {
                     nameDisplay = (nameDisplay == string.Empty ? propName : nameDisplay);
-                    throw new MISAValidateException($"Thông tin {nameDisplay} không được phép để trống");
+                    throw new MISAValidateException(string.Format(Core.Resources.ResourceVN.InfoNotEmpty,nameDisplay));
                 }
             }
         }

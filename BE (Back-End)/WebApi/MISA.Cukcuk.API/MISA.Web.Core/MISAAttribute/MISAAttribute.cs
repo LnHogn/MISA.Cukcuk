@@ -11,6 +11,7 @@ namespace MISA.Web.Core.MISAAttribute
     {
     }
 
+    [AttributeUsage(AttributeTargets.Property)]
     public class PropName:Attribute 
     {
         public string Name;
@@ -19,4 +20,13 @@ namespace MISA.Web.Core.MISAAttribute
         }
 
     }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class PrimaryKey : Attribute { }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class DateAddorMod : Attribute { }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class AddorModBy : Attribute { }
 }

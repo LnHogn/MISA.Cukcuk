@@ -46,12 +46,12 @@ namespace MISA.Web.Core.Services
                 var isDuplidate = _employeeRepository.CheckEmpCode(employee.EmployeeCode);
             if (isDuplidate)
             {
-                throw new MISAValidateException("Mã nhân viên không được phép trùng");
+                throw new MISAValidateException(Core.Resources.ResourceVN.EmployeeCodeNotDuplicate);
             }
             //email
             if (!IsValidEmail(employee.Email))
             {
-                throw new MISAValidateException("Email không đúng định dạng");
+                throw new MISAValidateException(Core.Resources.ResourceVN.EmailNotFormat);
             }
         }
     }

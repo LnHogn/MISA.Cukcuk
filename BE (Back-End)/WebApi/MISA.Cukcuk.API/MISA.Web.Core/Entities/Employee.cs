@@ -9,6 +9,7 @@ namespace MISA.Web.Core.Entities
 {
     public class Employee
     {
+        [PrimaryKey]
         public Guid EmployeeId { get; set; }
 
         [NotEmpty]
@@ -36,9 +37,13 @@ namespace MISA.Web.Core.Entities
         public string? Branch { get; set; }
         public Guid PositionId { get; set; }
         public Guid DepartmentId { get; set; }
+        [DateAddorMod]
         public DateTime? CreatedDate { get; set; }
+        [AddorModBy]
         public string? CreatedBy { get; set; }
+        [DateAddorMod]
         public DateTime? ModifiedDate { get; set; }
+        [AddorModBy]
         public string? ModifiedBy { get; set; }
     }
 }

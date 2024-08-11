@@ -10,3 +10,5 @@ C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\M
 C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\refint\MISA.Web.Core.dll
 C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.pdb
 C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\ref\MISA.Web.Core.dll
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.Resources.ResourceVN.resources
+C:\Users\LN_HOGNNN\Desktop\hk6\thuc_tap\MISA.Cukcuk_clone\BE (Back-End)\WebApi\MISA.Cukcuk.API\MISA.Web.Core\obj\Debug\net7.0\MISA.Web.Core.csproj.GenerateResource.cache
